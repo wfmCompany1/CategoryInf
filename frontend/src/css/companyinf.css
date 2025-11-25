@@ -1,0 +1,395 @@
+/* 페이지 기본 래퍼 */
+.companyinf-page {
+  min-height: 100vh;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* === 모달 기본 === */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 50;
+}
+
+.modal {
+  width: 1000px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  max-height: 80vh;
+}
+
+@media (max-width: 720px) {
+  .modal {
+    height: 90vh;
+    max-height: 90vh;
+  }
+}
+
+.header {
+  position: relative;
+  padding: 18px 20px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  flex: 0 0 auto;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.body {
+  padding: 18px 20px 20px;
+  flex: 1 1 auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+/* === 필드 === */
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 14px;
+}
+
+.input {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 12px;
+  font-size: 14px;
+}
+
+.input:focus {
+  outline: 2px solid #ede9fe;
+  border-color: #c4b5fd;
+}
+
+.hint {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.inputWithBtn {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.primaryBtn {
+  border-radius: 8px;
+  border: 0.3px solid rgb(0, 0, 0, 0.3);
+  background: #e6e6e6;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.inputWithSuffix {
+  position: relative;
+}
+
+.suffix {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.fieldGroup {}
+
+.groupTitle {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 960px) {
+  .grid4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fakeInput {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  background: #f9fafb;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.planName {}
+
+.planLimit {
+  color: #ef4444;
+  font-weight: 600;
+  margin-left: 4px;
+  animation: fadeBlink 2s infinite ease-in-out;
+}
+
+@keyframes fadeBlink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.ghostBtn {
+  background: #f9fafb;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ghostBtn:hover {
+  background: #f3f4f6;
+}
+
+.submitBtn {
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(139, 92, 246, 0.35);
+}
+
+.submitBtn:hover {
+  background: #7c3aed;
+}
+
+/* === Readonly (plus_insert) 스타일 === */
+.readonlyBox {
+  position: relative;
+  margin-top: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px 16px 14px 16px;
+  background: radial-gradient(1200px 1200px at 100% -20%,
+      rgba(139, 92, 246, 0.06),
+      transparent 60%),
+    #fff;
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.06);
+  animation: softIn 0.18s ease-out;
+}
+
+/* 왼쪽 포커스 바 */
+.readonlyBox::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #8b5cf6, #7c3aed);
+  opacity: 0.9;
+}
+
+.readonlyHeader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.readonlyBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #4c1d95;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.12) inset;
+}
+
+.readonlyTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.readonlySub {
+  grid-column: 1 / -1;
+  margin: -2px 0 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.readonlyList {
+  list-style: none;
+  margin: 12px 0 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+}
+
+@media (max-width: 640px) {
+  .readonlyList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.readonlyItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px dashed #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+  font-size: 13px;
+  color: #374151;
+  transition: border-color 0.2s ease, background-color 0.2s ease,
+    transform 0.08s ease;
+}
+
+.readonlyItem:hover {
+  border-color: #ddd6fe;
+  background: #f7f7ff;
+  transform: translateY(-1px);
+}
+
+/* 항목 점(도트) */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 8px;
+  background: radial-gradient(circle at 30% 30%, #a78bfa, #7c3aed);
+  box-shadow: 0 0 0 2px #ede9fe;
+}
+
+/* 기존 버튼/폼 스타일과 조화되는 작은 도움말 */
+.readonlyNote {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* 모션 (미세한 페이드 인) */
+@keyframes softIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.addressRow {
+  display: flex;
+  gap: 8px;
+}
+
+.addressRow .input {
+  flex: 1;
+}
+
+.searchAddressBtn {
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.searchAddressBtn:hover {
+  opacity: 0.9;
+}

@@ -14,7 +14,8 @@ public class CorsConfig implements WebMvcConfigurer {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:3000",
-                                "http://54.180.26.72"
+                                "http://54.180.26.72",
+                                "https://companyinf.duckdns.org"
 
                         ) // 안에 해당 주소를 넣어도 됨
                         .allowedHeaders("*")
