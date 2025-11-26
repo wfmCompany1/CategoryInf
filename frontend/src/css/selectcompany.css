@@ -441,3 +441,115 @@
   height: 18px;
   color: #fff;
 }
+
+/* ========================= */
+/* 카드 섹션 공통 영역 */
+/* ========================= */
+
+.pc-card-section {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #e2e8f0; /* 연한 점선 구분 */
+}
+
+.pc-section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f172a; /* 진한 제목색 */
+  margin-bottom: 0.4rem;
+}
+
+.pc-section-title .pc-icon-xs {
+  color: #64748b; /* slate-500 */
+}
+
+.pc-section-text {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #475569; /* slate-700 */
+  white-space: pre-line; /* 줄바꿈 유지 (textarea 내용용) */
+}
+
+/* ========================= */
+/* 대시보드 목표 수치 영역 */
+/* ========================= */
+
+.pc-target-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .pc-target-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.pc-target-item {
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.75rem;
+  background: #f8fafc; /* slate-50 */
+  border: 1px solid #e2e8f0; /* slate-200 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.pc-target-label {
+  font-size: 0.75rem;
+  color: #64748b; /* slate-500 */
+}
+
+.pc-target-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* ========================= */
+/* 카드 하단(필수 제출 서류 영역) */
+/* ========================= */
+
+.pc-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .pc-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.pc-footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pc-footer-label {
+  font-size: 0.8rem;
+  color: #94a3b8; /* slate-400 */
+}
+
+.pc-footer-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: #eef2ff; /* indigo-50 */
+  border: 1px solid #c7d2fe; /* indigo-200 */
+  display: inline-flex;
+  align-items: center;
+}
+

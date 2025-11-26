@@ -50,7 +50,7 @@ public class CompanyService {
         this.companyMapper.insertCompany(company);
     }
 
-    public List<Company> selectPrimeCompany(){
-        return companyMapper.selectPrimeCompany();
+    public List<Company> selectCompanyList(){
+        return companyMapper.selectCompanyList();
     }
 }

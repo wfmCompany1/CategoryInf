@@ -9,5 +9,5 @@ import java.util.List;
 public interface CompanyMapper {
     void insertCompany(Company company);
 
-    List<Company> selectPrimeCompany();
+    List<Company> selectCompanyList();
 }

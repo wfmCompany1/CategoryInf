@@ -38,19 +38,26 @@
         #{hasRequiredDocs}
         )
     </insert>
-    <select id="selectPrimeCompany">
+    <select id="selectCompanyList" resultType="com.example.backend.models.Company">
         SELECT
-        c.company_name AS companyName,
-        c.business_reg_no AS businessRegNo,
-        c.id,
-        c.contact_person AS contactPerson,
-        c.contact_phone_number AS contactPhoneNumber,
-        c.contact_email AS contactEmail,
-        p.price_name AS priceName
-        FROM company c
-        INNER JOIN price p ON p.uid = c.price_uid
-        WHERE (c.delete_yn IS NULL OR c.delete_yn = 'N')
-        ORDER BY c.uid DESC
+        login_id AS loginId,
+        business_reg_no AS businessRegNo,
+        company_name AS companyName,
+        contact_person AS contactPerson,
+        contact_phone_number AS contactPhoneNumber,
+        contact_email AS contactEmail,
+        address,
+        address_detail AS addressDetail,
+        target_no_accident_days AS targetNoAccidentDays,
+        target_incident AS targetIncident,
+        target_law AS targetLaw,
+        target_etc AS targetEtc,
+        main_process AS mainProcess,
+        has_required_docs AS hasRequiredDocs,
+        created_at,
+        updated_at
+        FROM company_info
+        ORDER BY created_at DESC
     </select>
 
 </mapper>

@@ -22,8 +22,8 @@ public class CompanyController {
         return "test";
     }
 
-    @GetMapping("/selectPrimeCompany")
+    @GetMapping("/selectCompanyList")
     public List<Company> selectPrimeCompany(){
-        return companyService.selectPrimeCompany();
+        return companyService.selectCompanyList();
     }
 }
